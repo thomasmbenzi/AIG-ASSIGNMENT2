@@ -17,6 +17,7 @@ function k(weight::Real,value::Real)
 end
 
 #printing and formating the output
+
 Base.show(io::IO,s::k) = print(io,@sprintf "[ %.2f kg, %.2f N, %.2f N/kg ]" s.weight s.value s.nvalue)
 
 #checking for the smallest value between current and neighbor
@@ -39,6 +40,7 @@ function hill_climbing(items::Vector{k{T}},limit::Real) where T<:Real
             break
         end
     end
+    
     #returning the knapsack
     return knapSack
 end
@@ -57,6 +59,7 @@ println("\nItems in the solution:\n ", join(sack, "\n "))
 mini,maxi = 1000, -1000
 
 function minimax(depth,node,maxiPlayer,v,alpha,beta)
+    
     #maximum player
     if maxiPlayer
         best = mini
@@ -76,12 +79,14 @@ function minimax(depth,node,maxiPlayer,v,alpha,beta)
     #minimum player
     else
         best = maxi
+        
         #exploring the left and
         for i in 1:3
             val = minimax(depth+1,node * 2 + i,true,v,alpha,beta)
             best = min(best,val)
             beta = min(beta,best)
-
+            
+            
             #pruning the currentNode
             if beta <= alpha
                 break
