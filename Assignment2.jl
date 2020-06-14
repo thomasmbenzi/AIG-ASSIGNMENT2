@@ -1,3 +1,7 @@
+#students details:
+#Andreas Elifas 218024142
+#Werner Eliaser 218062958
+#Mbenzi thomas  215033507
 using Printf
 
 #Question 1: Hill climbing
