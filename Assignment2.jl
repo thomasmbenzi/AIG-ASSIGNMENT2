@@ -97,3 +97,4 @@ end # function
 v = [4,8,6,9,1,2,5,7]
 println("Optimal value is: ",minimax(0,0,true,v,mini,maxi))
 
+
