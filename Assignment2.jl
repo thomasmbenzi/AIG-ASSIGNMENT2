@@ -57,9 +57,6 @@ println("\nItems in the solution:\n ", join(sack, "\n "))
 mini,maxi = 1000, -1000
 
 function minimax(depth,node,maxiPlayer,v,alpha,beta)
-    if depth == 3
-        return v[node]
-    end
     #maximum player
     if maxiPlayer
         best = mini
